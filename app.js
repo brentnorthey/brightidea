@@ -1,14 +1,16 @@
 import View from './view';
 import Controller from './controller';
+import {$on} from './helpers';
 
-require('./style.scss');
+require("./style.scss");
 
-/* Init App Here
+/* Initialize after DOM is ready */
+let init = function () {
+  let view = new View('View');
+  let controller = new Controller ('Controller', view);
 
-Add imports
+  controller.renderCast();
 
-require css
+};
 
-Fire it up
-
-*/
+$on(window, 'load', init);

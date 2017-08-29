@@ -2,7 +2,7 @@
 $itemBkgd: #39344B;
 
 html {
-  background: #343436;
+  background: $itemBkgd;
   font-size: 16px;
 }
 
@@ -14,6 +14,15 @@ body {
 
 main{
   margin: 1rem;
+}
+
+.container{
+  align-items: center;
+  background: $itemBkgd;
+  color: orange;
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
 }
 
 .container__item {

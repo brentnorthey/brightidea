@@ -7,8 +7,6 @@ export default class Controller {
 
     this.name = name;
     this.view = view;
-
-    renderCast();
     // for later
     // view.bindPrev(this.prev.bind(this));
   }
@@ -20,9 +18,7 @@ export default class Controller {
   renderCast() {
     this.view.clearCasts();
     let newcCast = new Cast('First');
-
     console.log(newCast.getName());
-
-
   }
+
 }
