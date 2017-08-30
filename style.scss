@@ -1,5 +1,9 @@
-﻿$orange: orange;
-$itemBkgd: #39344B;
+﻿@import url("animate.css");
+
+$orange: orange;
+$itemBkgdHl: #39344B;
+
+$itemBkgd: #3C3F41;
 
 html {
   background: $itemBkgd;
@@ -9,7 +13,18 @@ html {
 body {
   color: $orange;
   margin: 5rem;
-  font-family: tahoma;
+  font-family: tahoma,sans-serif;
+}
+
+header section{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+form{
+  margin: 0 auto;
+  width: 285px;
 }
 
 main{
@@ -18,19 +33,31 @@ main{
 
 .container{
   align-items: center;
-  background: $itemBkgd;
   color: orange;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  height: 80vh;
+  padding: 3rem;
 }
 
 .container__item {
-  background: $itemBkgd;
-  border: .2rem dashed $orange;
+  background: $itemBkgdHl;
+  border: 1px dashed;
   border-radius: .3rem;
   color: $orange;
-  margin: 1rem;
-  height: 80vh;
-  width: 80%;
+  min-height: 150px;
+  padding: 2rem;
+  min-width: 200px;
+}
+
+.container__intro {
+  align-items: center;
+  background: $itemBkgdHl;
+  border: 1px dashed;
+  border-radius: .3rem;
+  display: flex;
+  height: 20vh;
+  justify-content: space-around;
+  padding: 3rem;
+  margin-bottom:3rem;
 }

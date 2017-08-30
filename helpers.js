@@ -85,3 +85,57 @@ window[name] = json => {
 document.body.appendChild(script);
 })
 )(0);
+
+
+export const $getJSON = function(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'json';
+  xhr.onload = function() {
+    var status = xhr.status;
+    if (status === 200) {
+      callback(null, xhr.response);
+    } else {
+      callback(status, xhr.response);
+    }
+  };
+  xhr.send();
+};
+
+
+export function  getWeather(zip) {
+  console.log(`Fetching: ${zip}`);
+  let gravy = '45b608b94ef13a346b94101ef639d4cc'; // Scene of Sound
+  let potatoes = `https://api.openweathermap.org/data/2.5/forecast?q=${zip},us&APPID=${gravy}`;
+
+  var fetchHeaders = new Headers();
+  var fetchInit = {
+    method: 'GET',
+    headers: fetchHeaders,
+    cache: 'default'
+  };
+
+  var myRequest = new Request(potatoes, fetchInit);
+  console.log('bark');
+
+
+  fetch(myRequest)
+    .then(
+      (response)=> {
+    if (response.status !== 200) {
+    console.log('Looks like there was a problem. Status Code: ' +
+      response.status);
+    return;
+  }
+  console.log('meow')
+  response.json().then( (data) => {
+
+   console.log(this);
+});
+  console.log('howl')
+}
+)
+.catch(function (err) {
+    console.log('Fetch Error : No fetch for you!');
+  });
+}

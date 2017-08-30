@@ -4,18 +4,33 @@ export default class View {
 
   constructor(name) {
     this.name = name;
-    this.castContainer = qs('.container__cast');
-
+    this.castContainer = qs('.container');
+    this.input = qs('.input');
+    this.formSubmit = qs('.submit');
+    this.history = qs('.history');
   }
 
-  // bindPrev(handler) {
-  //   $on(this.countPrev, 'click', () => {
-  //     handler();
-  //   });
-  // }
+  bindSubmit(handler) {
+    $on(this.formSubmit, 'click', (e) => {
+      e.preventDefault();
+    handler();
+  });
+  }
 
-  clearWeather() {
+  bindHistory(handler) {
+    $on(this.history, 'click', (e) => {
+      e.preventDefault();
+    handler();
+  });
+  }
+
+  clearCasts() {
     this.castContainer.innerHTML = '';
   }
+
+  getInput(){
+    return this.input;
+  }
+
 
 }
