@@ -3,6 +3,12 @@
              
              ## Installation
              Run npm install
+             
+             npm install webpack -g
+             npm install webpack-dev-server -g
+             
+             webpack-dev-server --progress --colors
+             
              ## Usage
              Enter your desired location to view the weather.
              ## Contributing
